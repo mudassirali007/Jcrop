@@ -7,11 +7,12 @@ import Jcrop from 'jcrop';
 
 export default {
   name: 'Jcrop',
-  props: [ 'src', 'options', 'rect' ],
+  props: [ 'src', 'options', 'rect', 'class'],
   mounted: function() {
     const img = new Image();
     this.$el.appendChild(img);
     img.src = this.src;
+    img.className = this.class;
     Jcrop.load(img).then(this.startup);
   },
   methods: {
